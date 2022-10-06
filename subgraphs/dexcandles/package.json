@@ -1,0 +1,31 @@
+{
+    "name": "dexcandles",
+    "license": "MIT",
+    "version": "1.0.0",
+    "author": "SushiSwap",
+    "scripts": {
+        "codegen": "graph codegen subgraph.yaml",
+        "build": "graph build subgraph.yaml",
+        "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ abhinayak96/demodex subgraph.yaml --access-token",
+        "create-local": "graph create --node http://localhost:8020/ /sushiswap/sushiswap",
+        "remove-local": "graph remove --node http://localhost:8020/ /sushiswap/sushiswap",
+        "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 /sushiswap/sushiswap",
+        "prepare:bsc": "mustache config/bsc.json template.yaml > subgraph.yaml",
+        "prepare:fantom": "mustache config/fantom.json template.yaml > subgraph.yaml",
+        "prepare:goerli": "mustache config/goerli.json template.yaml > subgraph.yaml",
+        "prepare:kovan": "mustache config/kovan.json template.yaml > subgraph.yaml",
+        "prepare:mainnet": "mustache config/mainnet.json template.yaml > subgraph.yaml",
+        "prepare:matic": "mustache config/matic.json template.yaml > subgraph.yaml",
+        "prepare:rinkeby": "mustache config/rinkeby.json template.yaml > subgraph.yaml",
+        "prepare:ropsten": "mustache config/ropsten.json template.yaml > subgraph.yaml",
+        "prepare:xdai": "mustache config/xdai.json template.yaml > subgraph.yaml",
+        "prepare:fuse": "true"
+    },
+    "dependencies": {
+        "@graphprotocol/graph-ts": "^0.28.0",
+        "yarn": "^1.22.19"
+    },
+    "devDependencies": {
+        "@graphprotocol/graph-cli": "^0.34.0"
+    }
+}
