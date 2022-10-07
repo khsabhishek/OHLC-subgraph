@@ -25,6 +25,9 @@ export function handleSwap(event: Swap): void {
   }
 
   let pair = Pair.load(event.address.toHex())
+  if(!pair) {
+    return
+  }
   let price = token0Amount.divDecimal(token1Amount.toBigDecimal())
   let price1 = token1Amount.divDecimal(token0Amount.toBigDecimal())
 
